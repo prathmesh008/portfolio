@@ -38,6 +38,12 @@ const projects = [
         desc: "High-performance C++ engine parsing server logs with O(1) Hash Maps & Min-Heaps for threat detection.",
         tags: ["C++", "STL", "Heaps", "File I/O"],
         color: "bg-[#111]"
+    },
+    {
+        title: "Autonomous RAG Pipeline",
+        desc: "Engineered an autonomous scraping pipeline for 1,000+ weekly events using Puppeteer. Implemented RAG with ChromaDB & Ollama, reducing search latency by 40%.",
+        tags: ["Node.js", "Python", "ChromaDB", "Puppeteer", "Docker"],
+        color: "bg-[#3e6b4e]"
     }
 ];
 
@@ -53,7 +59,7 @@ export const Projects = () => {
                     {projects.map((project, idx) => (
                         <motion.div
                             key={idx}
-                            className={idx === 0 ? "md:col-span-2" : ""}
+                            className={idx === 0 || idx === projects.length - 1 ? "md:col-span-2" : ""}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -65,7 +71,7 @@ export const Projects = () => {
                                         ★ FEATURED_BUILD ★
                                     </div>
                                 )}
-                                <div className={`w-full mb-6 border-2 border-[#111] ${project.color} relative overflow-hidden ${idx === 0 ? 'h-64' : 'h-48'}`}>
+                                <div className={`w-full mb-6 border-2 border-[#111] ${project.color} relative overflow-hidden ${idx === 0 ? 'h-64' : idx === projects.length - 1 ? 'h-32' : 'h-48'}`}>
                                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=')] opacity-20" />
                                 </div>
 

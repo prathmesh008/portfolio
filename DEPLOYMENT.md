@@ -65,31 +65,36 @@ So you bought a domain (e.g., `prathmesh.com`). Here is how to connect it to you
 4.  Enter your domain name (e.g., `prathmesh.com`) in the input box and click **Add**.
 5.  Select the recommended option (usually "Add prathmesh.com and www.prathmesh.com").
 
-### Step 2: Configure DNS (At your Registrar)
-Vercel will show you a huge "Invalid Configuration" error. **This is normal.** It will give you two values to add to your domain registrar (GoDaddy, Namecheap, Hostinger, etc.).
+### Step 2: Configure DNS (Specifically for Hostinger 🟣)
+Since you bought your domain on Hostinger, here is exactly what to do:
 
-**Option A: The Nameserver Method (Easiest)**
-*Use this if you don't use your domain for email or other complicated things.*
-1.  Log in to where you bought your domain.
-2.  Find **"Nameservers"** or **"DNS Management"**.
-3.  Change the Nameservers to Vercel's:
-    *   `ns1.vercel-dns.com`
-    *   `ns2.vercel-dns.com`
-4.  Save. *It may take up to 24 hours to work, but usually takes minutes.*
+**Option A: The Nameserver Method (Recommended & Easiest)**
+1.  Log in to your **Hostinger Dashboard**.
+2.  Click on **Domains** at the top.
+3.  Click on your domain `prathmeshupadhyay.in`.
+4.  On the left sidebar, look for **"Nameservers"**.
+5.  Click **"Change Nameservers"**.
+6.  Select **"Change nameservers"** (not Hostinger default).
+7.  Delete the existing ones and enter Vercel's:
+    *   Nameserver 1: `ns1.vercel-dns.com`
+    *   Nameserver 2: `ns2.vercel-dns.com`
+8.  Click **Save**.
 
-**Option B: The A Record & CNAME Method (Recommended)**
-*Use this if you want to keep your DNS control at your registrar.*
-1.  Log in to your registrar.
-2.  Find **"manage DNS"** or **"DNS Records"**.
-3.  **Add an A Record**:
+**Option B: The A Record Method (If you want to keep Hostinger Email)**
+1.  In Hostinger, go to your domain and click **"DNS / Zone Editor"** on the left.
+2.  **Delete** any A records that point to Hostinger IPs (look for Type `A` and Name `@`).
+3.  **Add a New Record**:
     *   **Type**: `A`
-    *   **Name/Host**: `@` (or leave blank)
-    *   **Value/Target**: `76.76.21.21` (This is Vercel's IP)
-    *   **TTL**: Automatic or 3600
-4.  **Add a CNAME Record** (for the 'www' part):
+    *   **Name**: `@`
+    *   **Points to**: `76.76.21.21`
+    *   **TTL**: 3600
+    *   Click **Add Record**.
+4.  **Add CNAME for 'www'**:
     *   **Type**: `CNAME`
-    *   **Name/Host**: `www`
-    *   **Value/Target**: `cname.vercel-dns.com`
+    *   **Name**: `www`
+    *   **Points to**: `cname.vercel-dns.com`
+    *   **TTL**: 3600
+    *   Click **Add Record**.
 
 ### Step 3: Wait for Propagation
 1.  Go back to Vercel Domains dashboard.

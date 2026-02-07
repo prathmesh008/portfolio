@@ -15,7 +15,7 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Retro Portfolio | Digital Journey",
+  title: "Portfolio | Digital Journey",
   description: "A retro-styled digital portfolio journey.",
 };
 

@@ -22,8 +22,7 @@ export const About = () => {
                     <RetroBox className="bg-[#e05d28] text-[#fdfbf7] p-8 -rotate-2">
                         <h2 className="text-3xl font-bold mb-4 font-mono">WHO_AM_I?</h2>
                         <p className="font-mono text-lg leading-relaxed">
-                            I'm a Full-Stack Developer seeking to build scalable, production-ready systems.
-                            My expertise spans the MERN stack, Next.js, and low-level system design with C++.
+                            I'm a Full-Stack Engineer shipping production-ready systems end-to-end. My expertise spans Node.js, React, Python/Django, and distributed systems with real benchmark numbers to back it up.
                         </p>
                     </RetroBox>
                 </motion.div>
@@ -36,8 +35,7 @@ export const About = () => {
                 >
                     <RetroBox>
                         <p className="font-mono mb-4">
-                            I thrive on solving backend concurrency challenges and optimizing performance,
-                            while crafting pixel-perfect, interactive user interfaces.
+                            I thrive on backend concurrency challenges like distributed locking and task queues, while building clean, performant frontends in React and Next.js.
                         </p>
                     </RetroBox>
                 </motion.div>

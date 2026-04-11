@@ -13,6 +13,20 @@ const projects = [
         link: "https://grabaseat.vercel.app"
     },
     {
+        title: "TaskFlow",
+        desc: "Distributed task queue engine benchmarked at 3,350 jobs/sec with zero dropped jobs across 100,000 runs. Supports priority scheduling, delayed execution, and real-time job monitoring over WebSockets.",
+        tags: ["Node.js", "Redis", "Express", "WebSockets", "React"],
+        color: "bg-[#3e6b4e]",
+        code: "https://github.com/prathmesh008/TaskFlow"
+    },
+    {
+        title: "ChronoStore",
+        desc: "Lightweight time-series storage engine with append-only logs and in-memory range indexes achieving sub-5ms query latency on 1M+ data points. Includes a natural language query interface via Gemini function calling.",
+        tags: ["Node.js", "Express", "Gemini API", "Custom File I/O"],
+        color: "bg-[#3e6b4e]",
+        code: "https://github.com/prathmesh008/ChronoStore"
+    },
+    {
         title: "StartupBoost",
         desc: "B2B SaaS Marketplace utilizing a 3-tier architecture with Docker/K8s. Features entitlement engine & IAM logic.",
         tags: ["Next.js", "Docker", "Kubernetes", "MongoDB"],
@@ -27,23 +41,10 @@ const projects = [
         link: "https://insightdash-ten.vercel.app"
     },
     {
-        title: "CET Quiz Platform",
-        desc: "Comprehensive online assessment tool with real-time timers, auto-grading, and performance analytics.",
-        tags: ["MERN Stack", "Redis", "Node-cron"],
-        color: "bg-[#3e6b4e]",
-        link: "https://cet-quiz-nine.vercel.app"
-    },
-    {
         title: "Log Analytics",
         desc: "High-performance C++ engine parsing server logs with O(1) Hash Maps & Min-Heaps for threat detection.",
         tags: ["C++", "STL", "Heaps", "File I/O"],
         color: "bg-[#111]"
-    },
-    {
-        title: "Autonomous RAG Pipeline",
-        desc: "Engineered an autonomous scraping pipeline for 1,000+ weekly events using Puppeteer. Implemented RAG with ChromaDB & Ollama, reducing search latency by 40%.",
-        tags: ["Node.js", "Python", "ChromaDB", "Puppeteer", "Docker"],
-        color: "bg-[#3e6b4e]"
     }
 ];
 
@@ -87,9 +88,20 @@ export const Projects = () => {
                                 </div>
 
                                 <div className="flex gap-4 mt-auto">
-                                    <button className="flex items-center gap-2 text-sm font-bold border-2 border-[#111] px-4 py-2 hover:bg-[#111] hover:text-white transition-colors">
-                                        <Github size={16} /> CODE
-                                    </button>
+                                    {project.code ? (
+                                        <a
+                                            href={project.code}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 text-sm font-bold border-2 border-[#111] px-4 py-2 hover:bg-[#111] hover:text-white transition-colors"
+                                        >
+                                            <Github size={16} /> CODE
+                                        </a>
+                                    ) : (
+                                        <button className="flex items-center gap-2 text-sm font-bold border-2 border-[#111] px-4 py-2 hover:bg-[#111] hover:text-white transition-colors">
+                                            <Github size={16} /> CODE
+                                        </button>
+                                    )}
                                     {project.link && (
                                         <a
                                             href={project.link}

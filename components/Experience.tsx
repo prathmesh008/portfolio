@@ -8,7 +8,7 @@ const experiences = [
     {
         role: "Full-Stack Developer (Intern)",
         company: "Mentaive",
-        period: "Dec 2025 - Present",
+        period: "Feb 2026 - Present",
         desc: "Engineered a production-ready assessment platform using the MERN stack. Implemented secure REST APIs with JWT & SendGrid for alerts. Automated cron jobs for exam windows and reduced reporting overhead by 40% via a custom analytics dashboard."
     },
     {
